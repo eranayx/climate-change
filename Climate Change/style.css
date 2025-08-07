@@ -1,0 +1,246 @@
+/* Header: hero */
+
+/* How can I make this shrink/grow with page resize */
+/* Lots of things break on page resize */
+
+.hero--landing-page {
+	background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/202506/concept-illustration-global-warming-around-the-world-is-about-to-be-burned-by-human-hands-3d-image-051647851-16x9.jpg?VersionId=.T90RoVaLBgU9LtYbGP_TRFu7ghzGDRf");
+	min-height: 90dvh;
+}
+
+.hero__CTA {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	gap: 1em;
+	text-align: center;
+	flex: 1;
+	z-index: 1;
+}
+
+.hero__button {
+	font-size: var(--font-size-normal);
+	font-weight: var(--font-weight-bold);
+	padding: 1em;
+	border-radius: 5px;
+}
+
+/* Main content: overview */
+
+.overview__hook {
+	font-size: var(--font-size-normal);
+	text-align: center;
+	width: 100%;
+}
+
+.overview__image {
+	border-radius: 5px;
+	width: 45%;
+	object-fit: cover;
+}
+
+.overview__text {
+	flex: 1;
+	font-size: var(--font-size-small);
+}
+
+@media screen and (width < 96em) {
+	.overview {
+		flex-flow: column nowrap;
+	}
+
+	.overview__image {
+		order: 1;
+		align-self: center;
+		width: 65%;
+	}
+
+	.overview__text {
+		text-align: center;
+	}
+}
+
+@media screen and (width < 72em) {
+	.overview__image {
+		width: 80%;
+	}
+}
+
+@media screen and (width < 56em) {
+	.overview__image {
+		width: 100%;
+	}
+}
+
+/* Main content: By the Numbers */
+
+.statistics__figure-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	width: 100%;
+	gap: 6em;
+}
+
+.statistics__figure {
+	display: flex;
+	flex-flow: column wrap;
+	width: 25%;
+	height: fit-content;
+	gap: 3em;
+	flex-grow: 1;
+}
+
+.statistics__detail-wrapper {
+	color: var(--secondary-color2);
+	width: 100%;
+	padding: 5em 0;
+	text-align: center;
+}
+
+.figure__number {
+	font-size: var(--font-size-xxl);
+	font-weight: 200;
+}
+
+.figure__detail {
+	font-size: var(--font-size-normal);
+}
+
+.figure__caption {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1em;
+	font-size: var(--font-size-xs);
+}
+
+@media screen and (width < 80em) {
+	.statistics__figure {
+		width: 33%;
+		text-align: center;
+	}
+
+	.statistics__detail-wrapper {
+		padding: 3em 0;
+	}
+}
+
+@media screen and (width < 48em) {
+	.statistics__figure {
+		width: 100%;
+	}
+
+	.statistics__detail-wrapper {
+		padding: 1.5em 0;
+	}
+}
+
+/* Main content: Reduce Your Impact */
+
+.remedies__figure-container {
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+	gap: 6em;
+}
+
+.remedies__figure {
+	display: flex;
+	gap: 3em;
+}
+
+.remedies__figure:nth-child(odd) {
+	flex-flow: row nowrap;
+}
+
+.remedies__figure:nth-child(even) {
+	flex-flow: row-reverse nowrap;
+}
+
+.remedies__image {
+	width: 47%;
+	height: 50dvh;
+	border-radius: 5px;
+	object-fit: cover;
+	object-position: center;
+	align-self: center;
+}
+
+.remedies__caption {
+	display: flex;
+	flex-flow: column wrap;
+	align-self: center;
+	gap: 1em;
+	flex: 1;
+	text-align: center;
+}
+
+.caption__header {
+	font-size: var(--font-size-large);
+	color: var(--secondary-color2);
+}
+
+.caption__list {
+	font-size: var(--font-size-normal);
+	list-style-type: disc;
+	text-align: start;
+	align-self: center;
+	margin-left: 2em;
+}
+
+@media screen and (width < 90em) {
+	.remedies__image {
+		height: 40dvh;
+	}
+}
+
+@media screen and (width < 64em) {
+	.remedies__figure:nth-child(n) {
+		flex-flow: column wrap;
+	}
+
+	.remedies__image {
+		height: 40dvh;
+		width: 90%;
+	}
+}
+
+@media screen and (width < 48em) {
+	.remedies__image {
+		height: 30dvh;
+	}
+}
+
+/* Main content: important learn-more */
+
+.learn-more {
+	text-align: center;
+}
+
+.learn-more__article {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1em;
+	width: 100%;
+}
+
+.learn-more__header {
+	color: var(--secondary-color2);
+	font-size: var(--font-size-large);
+}
+
+.learn-more__caption {
+	font-size: var(--font-size-xs);
+}
+
+.video__container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+	width: 100%;
+	gap: 3em;
+}
+
+.video {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+}

@@ -1,0 +1,81 @@
+/* Header: hero */
+
+.hero--support {
+	background-image: url("https://agcdn-1d97e.kxcdn.com/wp-content/uploads/2017/06/alphagamma-3-reasons-why-helping-people-is-not-always-good-for-business-entrepreneurship-1021x580.jpg");
+}
+
+.hero::before {
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Main content: table */
+
+.support__table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Skip the first two rows (header and first row) */
+.table__row:nth-child(2n + 3) {
+	background-color: var(--primary-color1-dark);
+}
+
+.table__header,
+.table__data {
+	border: 2px black solid;
+}
+
+.table__header {
+	font-size: var(--font-size-large);
+	padding: 0.5em;
+	color: var(--accent-color2);
+}
+
+.table__data {
+	padding: 2em;
+	font-size: var(--font-size-small);
+}
+
+.table__row .foundation-name {
+	width: 30%;
+}
+
+.table__link {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: 1em;
+	color: var(--secondary-color2);
+	text-decoration: underline;
+	font-size: var(--font-size-small);
+	text-align: center;
+	transition: all 500ms ease;
+}
+
+.table__link:hover {
+	scale: 1.05;
+}
+
+.link__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 10px;
+}
+
+@media screen and (width < 48em) {
+	.table__data {
+		padding: 1em;
+	}
+}
+
+@media screen and (width < 32em) {
+	.table__data {
+		padding: 0.5em;
+	}
+	.table__header {
+		word-break: break-all;
+		font-size: var(--font-size-medium);
+	}
+}

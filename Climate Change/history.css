@@ -1,0 +1,157 @@
+/* Header: hero */
+
+.hero::before {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero--history {
+	background-image: url("https://cas.stthomas.edu/_media-library/_images/history/1920x1080/stthomas-history-time.jpg");
+}
+
+/* content: Timeline */
+
+.section--timeline {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 6em;
+	padding: var(--timeline-padding);
+}
+
+.timeline__figure-container {
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+	gap: 9em;
+}
+
+.timeline__figure-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: max(15px, 1vw);
+	min-height: 100%;
+	border-radius: 10px;
+	background: repeating-linear-gradient(
+		to bottom,
+		var(--secondary-color1),
+		var(--accent-color1) 33%,
+		var(--secondary-color1) 67%
+	);
+	animation: line-slide-down linear both;
+	animation-timeline: scroll(nearest block);
+	animation-range: entry 5% cover 100%;
+}
+
+/* ex: i don't think it's good to throw in an animation in other css files but
+how else would i do this or is this acceptable in terms of reusability,
+organization, etc */
+@keyframes line-slide-down {
+	0% {
+		clip-path: inset(0 0 100% 0);
+	}
+
+	100% {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+.timeline__figure {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 9em;
+	width: 100%;
+}
+
+/* Reverse the order */
+.timeline__figure:nth-of-type(even) .caption__wrapper {
+	order: -1;
+}
+
+.figure__image {
+	width: 100%;
+	height: 40dvh;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.caption__wrapper {
+	flex: 1;
+	text-align: center;
+	display: flex;
+	flex-flow: column wrap;
+	gap: 3em;
+}
+
+.caption__header {
+	font-size: var(--font-size-large);
+	color: var(--secondary-color2);
+}
+
+.caption__wrapper > :not(.caption__header) {
+	font-size: var(--font-size-small);
+}
+
+@media screen and (width < 90em) {
+	.figure__image {
+		height: 35dvh;
+	}
+}
+
+@media screen and (width < 80em) {
+	.figure__image {
+		height: 30dvh;
+	}
+}
+
+@media screen and (width < 70em) {
+	.figure__image {
+		height: 25dvh;
+	}
+}
+
+@media screen and (width < 48em) {
+	.timeline__figure {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 3em;
+	}
+
+	.figure__image {
+		width: 80%;
+		height: 35dvh;
+	}
+
+	.timeline__figure:nth-of-type(n) .caption__wrapper {
+		order: 0;
+	}
+
+	.caption__wrapper {
+		background-color: var(--primary-color2);
+		padding: 1.5em;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (width < 40em) {
+	.figure__image {
+		height: 25dvh;
+	}
+}
+
+@media screen and (width < 30em) {
+	.figure__image {
+		width: 100%;
+	}
+}
+
+.timeline__end-text {
+	font-size: var(--font-size-large);
+	color: var(--secondary-color2);
+	text-align: center;
+}

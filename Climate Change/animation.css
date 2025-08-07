@@ -1,0 +1,111 @@
+/* Animations 
+Ideally, they should be reusable 
+Realistically, they're only sort of reusable */
+
+.auto-show {
+	animation: auto-show both;
+	animation-timeline: view(10% 5%);
+	animation-range: entry 10% cover 25vh;
+}
+
+@keyframes auto-show {
+	from {
+		opacity: 0;
+		transform: translateY(20vh);
+		scale: 0.5;
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		scale: 1;
+	}
+}
+
+.image-reveal {
+	animation: image-reveal both;
+	animation-timeline: view(10% 5%);
+	animation-range: entry 10% cover 50vh;
+}
+
+@keyframes image-reveal {
+	from {
+		filter: blur(5px) contrast(4) saturate(0);
+		opacity: 0;
+		scale: 0.5;
+	}
+	to {
+		filter: none;
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+.stationary-slide-right-fast {
+	animation: stationary-slide-right both;
+	animation-timeline: view(20% 5%);
+	animation-range: entry 10% cover 20vh;
+}
+
+.stationary-slide-right-slow {
+	animation: stationary-slide-right both;
+	animation-timeline: view(10% 5%);
+	animation-range: entry 5% cover 50vh;
+}
+
+@keyframes stationary-slide-right {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+.stationary-slide-down {
+	animation: stationary-slide-down both;
+	animation-timeline: view(10% 5%);
+	animation-range: entry 10% cover 60vh;
+}
+
+/* ex: is it good practice to put such a specific class only used once but
+still inside animation css file */
+.stationary-slide-down-support {
+	animation: stationary-slide-down both;
+	animation-timeline: view(10% 5%);
+	animation-range: entry 10% cover 70%;
+}
+
+/* For the timeline */
+@media screen and (width < 40em) {
+	.stationary-slide-down {
+		animation-timeline: view(15% 10%);
+	}
+}
+
+@keyframes stationary-slide-down {
+	from {
+		clip-path: inset(0 0 100% 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@media screen and (width < 48em) {
+	.stationary-slide-down {
+		animation-range: entry 15% cover 60vh;
+	}
+}
+
+.fade-out {
+	animation: fade-out forwards;
+	animation-timeline: view();
+	animation-range: exit -50%;
+}
+
+@keyframes fade-out {
+	85%,
+	100% {
+		opacity: 0;
+	}
+}
