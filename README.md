@@ -1,11 +1,6 @@
 # climate-change
 Code Tenderloin Final Capstone
-
-About
-
-This website provides a brief overview of climate change. Most sources can be
-provided upon request.
-
+This website provides a brief overview of climate change.
 
 Notes
 
@@ -15,11 +10,11 @@ Notes
    definitely be restructured in a more organized way (all the
    effects__caption__xx).
 
-3. The navbar animations and Javascript are all a little clunky. This was my
+3. The navbar animations and JavaScript are all a little clunky. This was my
    first time messing with animations and JavaScript. (ex: the navbar animations
-   plays and slides up when on mobile before readjusting itself)
+   play and slide up when on mobile before readjusting itself)
 
-4. I would love if the navbar faded back in when scrolling up instead of simply
+4. I would love it if the navbar faded back in when scrolling up instead of simply
    appearing.
 
 5. I tried using container queries, but it seems I had incorrect syntax or
